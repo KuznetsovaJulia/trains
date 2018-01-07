@@ -8,7 +8,7 @@ class RailwayStation
   end
 
   def accept_train(train)
-    return "Train is Invalid" unless train_is_valid(train)
+    return 'Train is Invalid' unless train_is_valid(train)
     train_list << train
   end
 
@@ -16,13 +16,12 @@ class RailwayStation
     train_list.map(&:pretty_info)
   end
 
- private def train_is_valid(train)
+  private def train_is_valid(train)
     train.is_a?(Train)
-  end
-
+   end
 end
 
-#Станция:
+# Станция:
 # Имеет название, которое указывается при ее создании
 # Может принимать поезда
 # Может показывать список всех поездов на станции, находящиеся в текущий момент

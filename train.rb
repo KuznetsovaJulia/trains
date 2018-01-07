@@ -1,5 +1,5 @@
 class Train
-  TYPES = ['Passenger', 'Cargo']
+  TYPES = %w[Passenger Cargo].freeze
 
   attr_accessor :number_wagon, :speed
   attr_reader :name, :type, :route
@@ -9,10 +9,10 @@ class Train
     @name = name
     @number_wagon = number_wagon
     @type = type_by_id(type_id)
-    @location=[]
+    @location = []
   end
 
-  def stop #тормозить
+  def stop # тормозить
     self.speed = 0
   end
 
@@ -32,9 +32,7 @@ class Train
     @route = route
   end
 
-  def go_station
-
-  end
+  def go_station; end
 
   def pretty_info
     "Train: #{name}; type: #{type}"
@@ -45,10 +43,9 @@ class Train
   def type_by_id(type_id)
     TYPES[type_id - 1]
   end
-
 end
 
-#Поезд:
+# Поезд:
 # Имеет, тип, который указывается при создании: грузовой, пассажирский и количество вагонов.
 # Поезд может делать следующие вещи:
 # набирать скорость
@@ -61,4 +58,3 @@ end
 #
 # Перемещаться между станциями, указанными в маршруте.
 # Показывать предыдущую станцию, текущую, следующую, на основе маршрута
-

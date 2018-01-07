@@ -1,4 +1,4 @@
-#Маршрут:
+# Маршрут:
 # Имеет начальную и конечную станцию, а также список промежуточных станций
 # Может добавлять станцию в список
 # Может удалять станцию из списка
@@ -22,7 +22,7 @@ class Route
   end
 
   def remove_station(station)
-    station_list.delete_if {|st| st.name == station.name }
+    station_list.delete_if { |st| st.name == station.name }
   end
 
   def first_station
@@ -39,13 +39,7 @@ class Route
     station.is_a?(RailwayStation)
   end
 
-
-
   def station_is_present_in_list(station)
-    #Узнать, есть ли станция в списке как ?))
+    # Узнать, есть ли станция в списке как ?))
   end
 end
-
-
-
-
