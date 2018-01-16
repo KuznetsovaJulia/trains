@@ -25,7 +25,6 @@ class Train
     @current_station_index = 0
   end
   def move_to
-    return 'This is the last station' unless  @current_station != current_route.last_station
     @current_station_index +=1
     @current_station = current_station_list[current_station_index]
   end
