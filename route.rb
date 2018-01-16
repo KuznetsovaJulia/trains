@@ -5,7 +5,6 @@ class Route
   end
   def add_station(station)
     return 'Station is invalid' unless station_is_valid(station)
-
     if station_is_present_in_list(station)
       station_list << station
     else
@@ -26,7 +25,7 @@ class Route
     station.is_a?(RailwayStation)
   end
   def station_is_present_in_list(station)
-    self.station_list.all?{|st| st.name!=station.name}
+    station_list.all?{|st| st.name!=station.name}
   end
 end
 # Маршрут:

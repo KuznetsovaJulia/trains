@@ -13,6 +13,7 @@ class RailwayStation
     train_list.map(&:pretty_info)
   end
   def send_train (train)
+    return 'Train is Invalid' unless train_is_valid(train)
     train_list.delete_if { |tr| tr.name == train.name }
   end
   private
