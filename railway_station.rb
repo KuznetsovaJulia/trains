@@ -1,24 +1,24 @@
 class RailwayStation
   attr_accessor :train_list
   attr_reader :name
-
-  def initialize(name)
-    @name = name
+  def initialize(options = {})
+    @name = options[:name]
     @train_list = []
   end
-
   def accept_train(train)
     return 'Train is Invalid' unless train_is_valid(train)
     train_list << train
   end
-
   def format_trains
     train_list.map(&:pretty_info)
   end
-
-  private def train_is_valid(train)
+  def send_train (train)
+    train_list.delete_if { |tr| tr.name == train.name }
+  end
+  private
+  def train_is_valid(train)
     train.is_a?(Train)
-   end
+  end
 end
 
 # Станция:
